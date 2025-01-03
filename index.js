@@ -22,14 +22,10 @@ const db = getFirestore();
 // cron.schedule('*/2 * * * * *', async () => {
 // });
 router.get('/sync', async (req,res,next)=>{
-  try{
+
     console.log('sss');
-    
-    await main();
     res.status(200).json({message:'success'});
-  }catch(e){
-    res.status(500).json({message:'error'})
-  }
+
 });
  
 /////////////////////////////// Getting Orders from Shopify API ////////////////////////////////////////////////
