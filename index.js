@@ -23,6 +23,8 @@ const db = getFirestore();
 // });
 router.get('/sync', async (req,res,next)=>{
   try{
+    console.log('sss');
+    
     await main();
     res.status(200).json({message:'success'});
   }catch(e){
