@@ -24,8 +24,12 @@ const db = getFirestore();
 // });
 app.get('/sync', async (req,res,next)=>{
 
-    console.log('sss');
+  try{
+    await main();
     res.status(200).json({message:'success'});
+  }catch(e){
+    res.status(500).json({message:'error'})
+  }
 
 });
  
