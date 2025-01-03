@@ -22,7 +22,7 @@ const db = getFirestore();
  
 // cron.schedule('*/2 * * * * *', async () => {
 // });
-app.get('/sync', async (req,res,next)=>{
+app.post('/sync', async (req,res,next)=>{
 
   try{
     await main();
