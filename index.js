@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 var cron = require('node-cron');
 require('dotenv').config();
@@ -6,7 +7,7 @@ const port = process.env.PORT;
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 const router = express.Router();
- 
+app.use(morgan("dev"));
  
 /////////////////////////////// Firebase Initialization ///////////////////////////////////////////////////////////
 const serviceAccount = require('./serviceAccountKey.json');
