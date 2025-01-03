@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const morgan = require('morgan');
 const app = express();
 var cron = require('node-cron');
@@ -8,6 +9,7 @@ const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 const router = express.Router();
 app.use(morgan("dev"));
+app.use(cors());
  
 /////////////////////////////// Firebase Initialization ///////////////////////////////////////////////////////////
 const serviceAccount = require('./serviceAccountKey.json');
